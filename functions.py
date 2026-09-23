@@ -16,25 +16,15 @@ def largest(nums):
 
 
 def count_vowels(text):
-    count = 0
     vowels = {'a', 'e', 'i', 'o', 'u'}
-    for char in text:
-        if char in vowels:
-            count += 1
-    return count
+    return len([char for char in text.lower() if char in vowels])
+    
 
 def add_prefix(names, prefix="Mr. "):
-    ans = []
-    for name in names:
-        ans.append(prefix + name)
-    return ans
+    return [prefix + name for name in names]
 
 def initials(full_name):
-    ans = ""
-    words = full_name.split(' ')
-    for i in words:
-        ans = ans + i[0] + '.'
-    return ans
+    return "".join([f"{word[0]}." for word in full_name.split(' ')])
 
 def safe_divide(a, b):
     if b == 0:
